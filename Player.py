@@ -10,20 +10,20 @@ class Player:
         self.money = 500
         self.get_out_of_jail_free_cards = 0
 
-    def set_Money(self, input_Money):
+    def setMoney(self, input_Money):
         self.__money = input_Money
 
-    def set_Cards(self, input_Cards):
+    def setCards(self, input_Cards):
         self.__cards = self.cards.append(input_Cards)
 
-    def set_Jail(self, numJailFree):
+    def setJail(self, numJailFree):
         self.get_out_of_jail_free_cards + numJailFree
 
-    def get_Name(self):
+    def getName(self):
         return self.name
 
-    def get_Money(self):
+    def getMoney(self):
         return self.money
 
-    def get_Jail(self):
+    def getJail(self):
         return self.get_out_of_jail_free_cards
