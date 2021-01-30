@@ -29,7 +29,7 @@ def main():
     prop_10("North Carolina Avenue", "green", 300, False, 3),
     prop_11("Pacific Avenue", "green", 300, False, 3),
 ]
-Property(propertyList)
+    Property(propertyList)
     
     #game begins
     while gameround <= 10:
