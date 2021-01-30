@@ -5,14 +5,12 @@ class property:
     isOwned = False
     numHouses = 0
     
-    def setName(self, name):
+    def __init__(self, name, color, price, owned, num):
         self.name = name
-
-    def setColor(self, color):
         self.color = color
-
-    def setPrice(self, price):
         self.price = price
+        self.isOwned = owned
+        self.numHouses = num
 
     def setIsOwned(self, owned):
         self.isOwned = owned
