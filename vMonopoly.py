@@ -68,10 +68,11 @@ def main():
                     else:
                         propertyList[cardDraw].setOwner(playerOne.getName())
                         print("Congratulations on your new property!")
-            else if ()
+            elif propertyList[cardDraw].getIsOwned() == True and propertyList[cardDraw].getOwner() != playerTurn(gameround):
+                
 
         
-         else:
+         else: #call chance deck
             print(playerOne.getName() + " , you picked a Chance Card!")
             cardDraw = random.randint(1,7)
             print("Your card is:" + Chance[cardDraw].getName() + " " + Chance[cardDraw].getDefinition)
@@ -103,6 +104,12 @@ def over(oneMoney, twoMoney):
         print("Player 2 Wins! with a total of $", twoMoney, "!", sep="")
     else:
         print("It was a tie! Both player had $", oneMoney, "!", sep="")
+
+def playerTurn(gameturn)
+    if gameturn % 2 == 1:
+        return playerOne.getName()
+    else:
+        return playerTwo.getName()
         
 if __name__ == "__main__":
     main()
