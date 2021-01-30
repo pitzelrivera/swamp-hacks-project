@@ -13,7 +13,7 @@ def main():
     playerOne = Player(player1Name, 0)
     player2Name = input("PLayer 2 enter your name: ")
     playerTwo = Player(player2Name, 0)
-    player2Name = input("Player 2 enter your name: ")
+    #player2Name = input("Player 2 enter your name: ") i commented this out bc i dont think its necessary but i dont want to delete it
     
     #construction of properties
     propertyList = [
