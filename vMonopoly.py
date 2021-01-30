@@ -16,10 +16,10 @@ def main():
     #welcome messages and construction of players
     print("Welcome to Virtual Monopoly!")
     playerName = input("Player 1 enter your name: ")
-    playerOne = Player(playerName, 0)
+    playerOne = Player(player1Name, 0)
     print("Welcome, " + playerOne.getName())
     playerName = input("Player 2 enter your name: ")
-    playerTwo = Player(playerName, 0)
+    playerTwo = Player(player2Name, 0)
     
     #construction of properties
     propertyList = [
@@ -70,10 +70,24 @@ def main():
                         print("Congratulations on your new property!")
             else if ()
 
-        else:
-            #call chance deck
-
         
+         else:
+            print(playerOne.getName() + " , you picked a Chance Card!")
+            cardDraw = random.randint(1,7)
+            print("Your card is:" + Chance[cardDraw].getName() + " " + Chance[cardDraw].getDefinition)
+            
+            playerOne.set_Money(Chance[cardDraw].get_Money_Change)
+            
+            if Chance[cardDraw].get_Jail() == True:
+                print("Oh no! You're in jail. Pay $200 to get out of jail.")
+                playerOne.set_Money(-200)
+            else if cardDraw == 4 or cardDraw == 7:
+                print("The other player gets $50!")
+                playerTwo.set_Money(50)
+                
+
+            print(playerOne.getName() + ", you currently have " + playerOne.getMoney() + " in your bank")
+
         if playerOne.getMoney() <= 0 or playerTwo.getMoney() <= 0:
             over(playerOne.getMoney(), playerTwo.getMoney())        
         gameround++
