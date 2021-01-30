@@ -15,6 +15,9 @@ class Property:
         self.isOwned = owned
         self.numHouses = num
 
+    def upgradeRent(self):
+        return self.rent += (self.price * 0.05)
+        
     def setNumHouses(self, num):
         self.numHouses = num
 
