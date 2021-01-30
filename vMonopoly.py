@@ -2,11 +2,12 @@ def main():
     #import classes and functions
     import Player
     import Properties
+    import Chance
     import random
     
     #variables
     gameround = 1
-    propDraw
+    cardDraw
     playerName
     playerOne
     playerTwo
@@ -57,15 +58,15 @@ def main():
             print(playerTwo.get_Name() + "draw a card!")
         if random.randint(0, 50) % 2 == 0:
             #call properties deck
-            propDraw = random.randint(1,11)
-            print(playerOne.getName() + ", you landed on " + propertyList[propDraw].getName())
-            if propertyList[propDraw].isOwned == False:
+            cardDraw = random.randint(1,11)
+            print(playerOne.getName() + ", you landed on " + propertyList[cardDraw].getName())
+            if propertyList[cardDraw].isOwned == False:
                 answer = print("Do you want to buy this property? ")
                 if answer == "yes" or answer == "Yes":
-                    if playerOne.getMoney() < propertyList[propDraw].getPrice():
+                    if playerOne.getMoney() < propertyList[cardDraw].getPrice():
                         print("You do not have enough money to buy this property.")
                     else:
-                        propertyList[propDraw].setOwner(playerOne.getName())
+                        propertyList[cardDraw].setOwner(playerOne.getName())
         else:
             #call chance deck
 
