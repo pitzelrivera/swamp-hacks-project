@@ -73,10 +73,22 @@ def main():
         else:
             #call chance deck
 
-                
+        
+        if playerOne.getMoney() <= 0 or playerTwo.getMoney() <= 0:
+            over(playerOne.getMoney(), playerTwo.getMoney())        
         gameround++
         
     #outside of loop. who has most money this person wins
+    over(playerOne.getMoney(), playerTwo.getMoney())
+    
+    
+def over(oneMoney, twoMoney):
+    if oneMoney > twoMoney:
+        print("Player 1 Wins! with a total of $", oneMoney, "!", sep="")
+    if oneMoney < twoMoney:
+        print("Player 2 Wins! with a total of $", twoMoney, "!", sep="")
+    else:
+        print("It was a tie! Both player had $", oneMoney, "!", sep="")
         
 if __name__ == "__main__":
     main()
