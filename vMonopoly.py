@@ -90,7 +90,7 @@ def main():
         print(playerOne.getName() + ", you currently have " + str(playerTurn(gameround).getMoney()) + " in your bank")
 
         if playerOne.getMoney() <= 0 or playerTwo.getMoney() <= 0:
-            over(playerOne.getMoney(), playerTwo.getMoney())        
+            break        
         gameround = gameround + 1
         
     #outside of loop. who has most money this person wins
