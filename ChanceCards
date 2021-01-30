@@ -5,9 +5,13 @@ def __init__(self, chance_name, chance_definition, is_in_jail, money_change) :
         self.jail = is_in_jail
         self.money = money_change
 
-Chance("Advance to Go", "Collect $200 Dollars", False, 200)
-Chance("Go to Jail", "Go Directly to Jail, Do not collect $200", True, 0)
-Chance("Get out of Jail Free", "", False, 0)
-Chance("Tax", "Pay poor tax of $15", False, -15)
-Chance("Chairman of the board", "Pay the other player $50", False, -50)
-Chance("You have won a crossword competition", "Collect $100", False, 100)
+ch0 = Chance("Advance to Go", "Collect $200 Dollars", False, 200)
+ch1 = Chance("Go to Jail", "Go Directly to Jail, Do not collect $200", True, 0)
+ch2 = Chance("Get out of Jail Free", "", False, 0)
+ch3 = Chance("Tax", "Pay poor tax of $15", False, -15)
+ch4 = Chance("Chairman of the board", "Pay the other player $50", False, -50)
+ch5 = Chance("You have won a crossword competition", "Collect $100", False, 100)
+ch6 = Chance("Go to Jail", "Go Directly to Jail, Do not collect $200", True, 0)
+ch7 = Chance("Buy your friend a birthday gift", "Pay them $50", False, -50)
+
+ChanceList = [ch0, ch1, ch2, ch3, ch4, ch5, ch6, ch7]
