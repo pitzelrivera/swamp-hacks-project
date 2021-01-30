@@ -3,6 +3,7 @@ def main():
     from Player import player
     from Property import properties
     from Chance import chancedeck
+    from Chest import chest
     import random
     
     #variables
@@ -47,6 +48,24 @@ def main():
         chancedeck("Go to Jail.", "Go Directly to Jail, Do not collect $200.", True, 0),
         chancedeck("Buy your friend a birthday gift.", "Pay them $50.", False, -50)
     ]
+
+    #community chest
+    chestList = [
+        chest("Advance to Go", "Collect $200 Dollars", False, 200),
+        chest("Bank error in your favor", "Collect $200", False, 200),
+        chest("Doctor's fee", "Pay $50", False, -50),
+        chest("From sale of stock", "you get $50", False, 50),
+        chest("Get out of Jail Free", "", False, 0),
+        chest("Go to Jail", "Go Directly to Jail, Do not collect $200", True, 0),
+        chest("Holiday Fund matures", "Receive $100", False, 100),
+        chest("Income tax refund", "Collect $20", False, 20),
+        chest("Pay hospital fees of $100", "", False, -100),
+        chest("Pay school fees of $150", "", False, -150),
+        chest("Grand Opera Night", "Collect $50 from the other player for opening night seats", False, 50),
+        chest("It is your birthday", "Collect $10", False, 10),
+        chest("Receive $25 consultancy fee", "", False, 25)
+    ]
+
     
     #game begins
     while gameround <= 10:
@@ -54,7 +73,7 @@ def main():
             print(playerOne.getName() + " draw a card.")
         else:
             print(playerTwo.getName() + " draw a card.")
-        if random.randint(0, 50) % 2 == 0:
+        if random.randint(0, 50) % 3 == 0:
             #call properties deck
             cardDraw = random.randint(1,10)
             print(playerTurn(gameround).getName() + ", you landed on " + propertyList[cardDraw].getName())
@@ -71,7 +90,7 @@ def main():
                     print("No problem. Better luck next time!")
             elif propertyList[cardDraw].getIsOwned() == True and propertyList[cardDraw].getOwner() != playerTurn(gameround).getName():
                 playerTurn(gameround).setMoney(-propertyList[cardDraw].getRent)
-        else:
+        elif random.randint(0, 50) % 3 == 1:
             #call chance deck
             print(playerTurn(gameround).getName() + ", you picked a Chance Card!")
             cardDraw = random.randint(1,7)
@@ -88,7 +107,33 @@ def main():
                     playerTwo.setMoney(50)
                 else:
                     playerOne.setMoney(50)
-                
+        else: #player 1
+            #Community Chest
+            print(playerOne.getName() + ", you picked a Community Chest Card!")
+            cardDraw = random.randint(1,12)
+            print("Your car is: " + chest[cardDraw].getName() + " " + chest[cardDraw].getDefinition)
+
+            playerOne.set_Money(chest[cardDraw].getMoneyChange)
+
+            if chanceList[cardDraw].getJail() == True:
+                print("Oh no! You're in jail. Pay $200 to get out of jail.")
+                playerOne.setMoney(-200)
+            if cardDraw == 10:
+                print("The other player pays you $50!")
+                playerTwo.setMoney(-50)
+        else: #playerTwo
+            print(playerTwo.getName() + ", you picked a Community Chest Card!")
+            cardDraw = random.randint(1,12)
+            print("Your car is: "chest[cardDraw].getName() + " " + chest[cardDraw].getDefinition)
+
+            playerTwo.setMoney(chest[cardDraw].getMoneyChange)
+
+            if chanceList[cardDraw].getJail() == True:
+                print("Oh no! You're in jail. Pay $200 to get out of jail.")
+                playerTwo.setMoney(-200)
+            if cardDraw == 10:
+                print("The other player pays you $50!")
+                playerOne.setMoney(-50)
 
         print(playerOne.getName() + ", you currently have $" + str(playerTurn(gameround).getMoney()) + " in your bank")
 
