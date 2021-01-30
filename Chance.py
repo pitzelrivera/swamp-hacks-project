@@ -1,18 +1,19 @@
-class Chest:
-    def __init__(self, chestName, chestDefinition, inJail, moneyChange):
-        self.chestName = chestName
-        self.chestDefinition = chestDefinition
-        self.inJail = inJail
-        self.moneyChange = moneyChange
+class chancedeck:
+
+    def __init__(self, chance_name, chance_definition, is_in_jail, money_change) :
+        self.name = chance_name
+        self.definition = chance_definition
+        self.jail = is_in_jail
+        self.money = money_change
 
     def getName(self):
-        return self.chestName
+        return self.name
 
     def getDefinition(self):
-        return self.chestDefinition
+        return self.definition
 
     def getJail(self):
-        return self.inJail
+        return self.jail
 
     def getMoneyChange(self):
-        return self.moneyChange
+        return self.money
