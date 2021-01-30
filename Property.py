@@ -16,7 +16,8 @@ class Property:
         self.numHouses = num
 
     def upgradeRent(self):
-        return self.rent += (self.price * 0.05)
+        self.rent += (self.price * 0.05)
+        return self.rent
         
     def setNumHouses(self, num):
         self.numHouses = num
