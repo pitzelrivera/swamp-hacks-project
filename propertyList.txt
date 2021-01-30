@@ -6,5 +6,8 @@ propertyList = [
     prop_5("Virginia Avenue", 160, "purple", False, 3),
     prop_6("Kentucky Avenue", 220, "red", False, 3),
     prop_7("Indiana Avenue", 220, "red", False, 3),
-    prop_8("Illinois Avenue", 240, "red", False, 3)
+    prop_8("Illinois Avenue", 240, "red", False, 3),
+    prop_9("Pennsylvania Avenue", "green", 320, False, 0),
+    prop_10("North Carolina Avenue", "green", 300, False, 0),
+    prop_11("Pacific Avenue", "green", 300, False, 0),
 ]
