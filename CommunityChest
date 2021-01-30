@@ -1,0 +1,18 @@
+
+chestList = [
+        cc0("Advance to Go", "Collect $200 Dollars", False, 200),
+        cc1("Bank error in your favor", "Collect $200, False, 200),
+        cc2("Doctor's fee", "Pay $50", False, -50),
+        cc3("From sale of stock", "you get $50", False, 50),
+        cc4("Get out of Jail Free", "", False, 0),
+        cc5("Go to Jail", "Go Directly to Jail, Do not collect $200", True, 0),
+        cc6("Holiday Fund matures", "Receive $100", False, 100),
+        cc7("Income tax refund", "Collect $20", False, 20),
+        cc8("Pay hospital fees of $100", "", False, -100),
+        cc9("Pay school fees of $150", "", False, -150),
+        cc10("Grand Opera Night", "Collect $50 from the other player for opening night seats", False, 50),
+        cc11("It is your birthday", "Collect $10", False, 10),
+        cc12("Receive $25 consultancy fee", "", False, 25),
+    ]
+
+    Chest(chanceList)

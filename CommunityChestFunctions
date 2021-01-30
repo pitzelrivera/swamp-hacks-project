@@ -1,0 +1,35 @@
+#playerOne
+else:
+    print(playerOne.getName() + ", you picked a Community Chest Card!")
+    cardDraw = random.randint(1,12)
+    print("Your car is: "Chest[cardDraw].getName() + " " + Chest[cardDraw].getDefinition)
+
+    playerOne.set_Money(Chest[cardDraw].getMoneyChange)
+
+    if Chance[cardDraw].getJail() == True:
+        print("Oh no! You're in jail. Pay $200 to get out of jail.")
+        playerOne.set_Money(-200)
+    if cardDraw == 10:
+        print("The other player pays you $50!")
+        playerTwo.set_Money(-50)
+
+    print(playerOne.getName() + ", you currently have $" + playerOne.getMoney() + " in your bank")
+
+
+
+#playerTwo
+else:
+    print(playerTwo.getName() + ", you picked a Community Chest Card!")
+    cardDraw = random.randint(1,12)
+    print("Your car is: "Chest[cardDraw].getName() + " " + Chest[cardDraw].getDefinition)
+
+    playerTwo.set_Money(Chest[cardDraw].getMoneyChange)
+
+    if Chance[cardDraw].getJail() == True:
+        print("Oh no! You're in jail. Pay $200 to get out of jail.")
+        playerTwo.set_Money(-200)
+    if cardDraw == 10:
+        print("The other player pays you $50!")
+        playerOne.set_Money(-50)
+
+    print(playerTwo.getName() + ", you currently have $" + playerTwo.getMoney() + " in your bank")
