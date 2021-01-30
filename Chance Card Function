@@ -1,0 +1,21 @@
+else:
+  print(playerOne.getName() + " , you picked a Chance Card!")
+  cardDraw = random.randint(1,7)
+  print("Your card is:" + Chance[cardDraw].getName() + " " + Chance[cardDraw].getDefinition)
+  
+  playerOne.set_Money(Chance[cardDraw].get_Money_Change)
+  
+  if Chance[cardDraw].get_Jail() == True:
+    print("Oh no! You're in jail. Pay $200 to get out of jail.")
+    playerOne.set_Money(-200)
+  else if cardDraw == 4 || cardDraw == 7:
+    print("The other player gets $50!")
+    playerTwo.set_Money(50)
+    
+
+  print(playerOne.getName() + ", you currently have " + playerOne.getMoney() + " in your bank")
+  
+
+  
+  
+  
