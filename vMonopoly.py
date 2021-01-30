@@ -16,10 +16,10 @@ def main():
     #welcome messages and construction of players
     print("Welcome to Virtual Monopoly!")
     playerName = input("Player 1 enter your name: ")
-    playerOne = Player(player1Name, 0)
+    playerOne = Player(playerName, 0)
     print("Welcome, " + playerOne.getName())
     playerName = input("Player 2 enter your name: ")
-    playerTwo = Player(player2Name, 0)
+    playerTwo = Player(playerName, 0)
     
     #construction of properties
     propertyList = [
