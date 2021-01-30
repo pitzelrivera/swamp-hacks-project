@@ -1,7 +1,7 @@
 def main():
     #import classes and functions
     import Player
-    import Properties
+    import Property
     import Chance
     import random
     
@@ -23,17 +23,17 @@ def main():
     
     #construction of properties
     propertyList = [
-    prop_1("Mediterranean Avenue", 60, "brown", False, 3),
-    prop_2("Baltic Avenue", 60, "brown", False, 3),
-    prop_3("St. Charles Place", 140, "purple", False, 3),
-    prop_4("State Avenue", 140, "purple", False, 3),
-    prop_5("Virginia Avenue", 160, "purple", False, 3),
-    prop_6("Kentucky Avenue", 220, "red", False, 3),
-    prop_7("Indiana Avenue", 220, "red", False, 3),
-    prop_8("Illinois Avenue", 240, "red", False, 3),
-    prop_9("Pennsylvania Avenue", "green", 320, False, 3),
-    prop_10("North Carolina Avenue", "green", 300, False, 3),
-    prop_11("Pacific Avenue", "green", 300, False, 3),
+        prop_1("Mediterranean Avenue", 60, "brown", False, 3),
+        prop_2("Baltic Avenue", 60, "brown", False, 3),
+        prop_3("St. Charles Place", 140, "purple", False, 3),
+        prop_4("State Avenue", 140, "purple", False, 3),
+        prop_5("Virginia Avenue", 160, "purple", False, 3),
+        prop_6("Kentucky Avenue", 220, "red", False, 3),
+        prop_7("Indiana Avenue", 220, "red", False, 3),
+        prop_8("Illinois Avenue", 240, "red", False, 3),
+        prop_9("Pennsylvania Avenue", "green", 320, False, 3),
+        prop_10("North Carolina Avenue", "green", 300, False, 3),
+        prop_11("Pacific Avenue", "green", 300, False, 3),
     ]
     Property(propertyList)
 
@@ -60,13 +60,16 @@ def main():
             #call properties deck
             cardDraw = random.randint(1,11)
             print(playerOne.getName() + ", you landed on " + propertyList[cardDraw].getName())
-            if propertyList[cardDraw].isOwned == False:
+            if propertyList[cardDraw].getIsOwned == False: #Make sure property is not owned
                 answer = print("Do you want to buy this property? ")
                 if answer == "yes" or answer == "Yes":
-                    if playerOne.getMoney() < propertyList[cardDraw].getPrice():
+                    if playerOne.getMoney() < propertyList[cardDraw].getPrice(): #Cannot buy if they have less than the amount
                         print("You do not have enough money to buy this property.")
                     else:
                         propertyList[cardDraw].setOwner(playerOne.getName())
+                        print("Congratulations on your new property!")
+            else if ()
+
         else:
             #call chance deck
 
