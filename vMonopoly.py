@@ -1,7 +1,7 @@
 def main():
     #import classes and functions
     import Player
-    import Property
+    import Properties
     import random
     
     #variables
@@ -17,18 +17,19 @@ def main():
     
     #construction of properties
     propertyList = [
-    Property(prop_1("Mediterranean Avenue", 60, "brown", False, 3)),
-    Property(prop_2("Baltic Avenue", 60, "brown", False, 3)),
-    Property(prop_3("St. Charles Place", 140, "purple", False, 3)),
-    Property(prop_4("State Avenue", 140, "purple", False, 3)),
-    Property(prop_5("Virginia Avenue", 160, "purple", False, 3)),
-    Property(prop_6("Kentucky Avenue", 220, "red", False, 3)),
-    Property(prop_7("Indiana Avenue", 220, "red", False, 3)),
-    Property(prop_8("Illinois Avenue", 240, "red", False, 3)),
-    Property(prop_9("Pennsylvania Avenue", "green", 320, False, 3)),
-    Property(prop_10("North Carolina Avenue", "green", 300, False, 3)),
-    Property(prop_11("Pacific Avenue", "green", 300, False, 3)),
+    prop_1("Mediterranean Avenue", 60, "brown", False, 3),
+    prop_2("Baltic Avenue", 60, "brown", False, 3),
+    prop_3("St. Charles Place", 140, "purple", False, 3),
+    prop_4("State Avenue", 140, "purple", False, 3),
+    prop_5("Virginia Avenue", 160, "purple", False, 3),
+    prop_6("Kentucky Avenue", 220, "red", False, 3),
+    prop_7("Indiana Avenue", 220, "red", False, 3),
+    prop_8("Illinois Avenue", 240, "red", False, 3),
+    prop_9("Pennsylvania Avenue", "green", 320, False, 3),
+    prop_10("North Carolina Avenue", "green", 300, False, 3),
+    prop_11("Pacific Avenue", "green", 300, False, 3),
 ]
+Property(propertyList)
     
     #game begins
     while gameround <= 10:
