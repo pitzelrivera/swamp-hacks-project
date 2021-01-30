@@ -2,13 +2,15 @@ class property:
     name = ""
     color = ""
     price = 0
+    rent = 0
     isOwned = False
     numHouses = 0
     
-    def __init__(self, name, color, price, owned, num):
+    def __init__(self, name, color, price, rent, owned, num):
         self.name = name
         self.color = color
         self.price = price
+        self.rent = rent
         self.isOwned = owned
         self.numHouses = num
 
@@ -26,6 +28,9 @@ class property:
 
     def getPrice(self):
         return self.price
+
+    def getRent(self):
+        return self.rent
 
     def getIsOwned(self):
         return self.isOwned
