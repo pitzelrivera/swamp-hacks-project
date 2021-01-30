@@ -1,8 +1,8 @@
 class Player:
-    def __init__(self, name, cards, money):
+    def __init__(self, name, cards):
         self.name = name
         self.cards = list()
-        self.money = money
+        self.money = 500
     
     def set_Name(self, input_Name):
         self.__name = input_Name
