@@ -6,11 +6,11 @@ class property:
     isOwned = False
     numHouses = 0
     
-    def __init__(self, name, color, price, rent, owned, num):
+    def __init__(self, name, color, price, owned, num):
         self.name = name
         self.color = color
         self.price = price
-        self.rent = rent
+        self.rent = price/4
         self.isOwned = owned
         self.numHouses = num
 
