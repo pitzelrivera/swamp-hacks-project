@@ -1,0 +1,10 @@
+propertyList = [
+    prop_1("Mediterranean Avenue", 60, "brown", False, 3),
+    prop_2("Baltic Avenue", 60, "brown", False, 3),
+    prop_3("St. Charles Place", 140, "purple", False, 3),
+    prop_4("State Avenue", 140, "purple", False, 3),
+    prop_5("Virginia Avenue", 160, "purple", False, 3),
+    prop_6("Kentucky Avenue", 220, "red", False, 3),
+    prop_7("Indiana Avenue", 220, "red", False, 3),
+    prop_8("Illinois Avenue", 240, "red", False, 3)
+]
