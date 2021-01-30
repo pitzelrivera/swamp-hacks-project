@@ -15,14 +15,12 @@ class Property:
         self.isOwned = owned
         self.numHouses = num
 
-    def setIsOwned(self, owned):
-        self.isOwned = owned
-
     def setNumHouses(self, num):
         self.numHouses = num
 
     def setOwner(self, owner):
         self.owner = owner
+        self.isOwned = True
 
     def getName(self):
        return self.getName
