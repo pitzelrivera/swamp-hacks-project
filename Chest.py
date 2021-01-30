@@ -1,4 +1,4 @@
-class Chest:
+class chest:
     def __init__(self, chestName, chestDefinition, inJail, moneyChange):
         self.chestName = chestName
         self.chestDefinition = chestDefinition
