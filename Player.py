@@ -11,7 +11,7 @@ class Player:
         self.get_out_of_jail_free_cards = 0
 
     def setMoney(self, input_Money):
-        self.__money = input_Money
+        self.__money + input_Money
 
     def setCards(self, input_Cards):
         self.__cards = self.cards.append(input_Cards)
