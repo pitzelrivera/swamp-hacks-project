@@ -58,14 +58,17 @@ def main():
             #call properties deck
             cardDraw = random.randint(1,10)
             print(playerTurn(gameround).getName() + ", you landed on " + propertyList[cardDraw].getName())
-            if propertyList[cardDraw].getIsOwned == False: #Make sure property is not owned
-                answer = print("Do you want to buy this property? ")
+            if propertyList[cardDraw].getIsOwned() == False:
+                #Make sure property is not owned
+                answer = input("Do you want to buy this property? ")
                 if answer == "yes" or answer == "Yes":
                     if playerOne.getMoney() < propertyList[cardDraw].getPrice(): #Cannot buy if they have less than the amount
                         print("You do not have enough money to buy this property.")
                     else:
                         propertyList[cardDraw].setOwner(playerOne.getName())
                         print("Congratulations on your new property!")
+                else:
+                    print("No problem. Better luck next time!")
             elif propertyList[cardDraw].getIsOwned() == True and propertyList[cardDraw].getOwner() != playerTurn(gameround).getName():
                 playerTurn(gameround).setMoney(-propertyList[cardDraw].getRent)
         else:
@@ -87,7 +90,7 @@ def main():
                     playerOne.setMoney(50)
                 
 
-        print(playerOne.getName() + ", you currently have " + str(playerTurn(gameround).getMoney()) + " in your bank")
+        print(playerOne.getName() + ", you currently have $" + str(playerTurn(gameround).getMoney()) + " in your bank")
 
         if playerOne.getMoney() <= 0 or playerTwo.getMoney() <= 0:
             break        
