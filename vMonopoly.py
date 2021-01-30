@@ -5,15 +5,20 @@ def main():
     import random
     
     #variables
-    gameround = 1;
+    gameround = 1
+    propDraw
+    playerName
+    playerOne
+    playerTwo
+    answer
     
     #welcome messages and construction of players
     print("Welcome to Virtual Monopoly!")
-    player1Name = input("Player 1 enter your name: ")
+    playerName = input("Player 1 enter your name: ")
     playerOne = Player(player1Name, 0)
-    player2Name = input("PLayer 2 enter your name: ")
+    print("Welcome, " + playerOne.getName())
+    playerName = input("Player 2 enter your name: ")
     playerTwo = Player(player2Name, 0)
-    #player2Name = input("Player 2 enter your name: ") i commented this out bc i dont think its necessary but i dont want to delete it
     
     #construction of properties
     propertyList = [
@@ -28,8 +33,21 @@ def main():
     prop_9("Pennsylvania Avenue", "green", 320, False, 3),
     prop_10("North Carolina Avenue", "green", 300, False, 3),
     prop_11("Pacific Avenue", "green", 300, False, 3),
-]
+    ]
     Property(propertyList)
+
+    #list of chance cards
+    chanceList = [
+        ch0("Advance to Go", "Collect $200 Dollars", False, 200),
+        ch1("Go to Jail", "Go Directly to Jail, Do not collect $200", True, 0),
+        ch2("Get out of Jail Free", "", False, 0),
+        ch3("Tax", "Pay poor tax of $15", False, -15),
+        ch4("Chairman of the board", "Pay the other player $50", False, -50),
+        ch5("You have won a crossword competition", "Collect $100", False, 100),
+        ch6("Go to Jail", "Go Directly to Jail, Do not collect $200", True, 0),
+        ch7("Buy your friend a birthday gift", "Pay them $50", False, -50)
+    ]
+    Chance(chanceList)
     
     #game begins
     while gameround <= 10:
@@ -39,8 +57,18 @@ def main():
             print(playerTwo.get_Name() + "draw a card!")
         if random.randint(0, 50) % 2 == 0:
             #call properties deck
+            propDraw = random.randint(1,11)
+            print(playerOne.getName() + ", you landed on " + propertyList[propDraw].getName())
+            if propertyList[propDraw].isOwned == False:
+                answer = print("Do you want to buy this property? ")
+                if answer == "yes" or answer == "Yes":
+                    if playerOne.getMoney() < propertyList[propDraw].getPrice():
+                        print("You do not have enough money to buy this property.")
+                    else:
+                        propertyList[propDraw].setOwner(playerOne.getName())
         else:
             #call chance deck
+
                 
         gameround++
         
